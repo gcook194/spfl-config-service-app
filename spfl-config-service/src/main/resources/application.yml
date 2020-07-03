@@ -1,0 +1,11 @@
+---
+server:  port: 8888
+spring:  cloud:    config:      server:        git:          uri: https://github.com/gcook194/spfl-config-server
+  application:
+    name: spfl-config-service
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    instance-id: ${spring.application.name}:${random.int}
